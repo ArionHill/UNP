@@ -2,6 +2,7 @@
 #include <arpa/inet.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 #include "echo.h"
 
@@ -13,7 +14,7 @@ int main(int argc, char const *argv[])
     }
     int i, sockfd[5];
     struct sockaddr_in servaddr;
-    for (i = 0; i < 5; ++ i){
+    for (i = 0; i < 1; ++ i){
         sockfd[i] = socket(AF_INET, SOCK_STREAM, 0);
         servaddr.sin_family = AF_INET;
         servaddr.sin_port = htons(SERV_PORT);
@@ -22,7 +23,7 @@ int main(int argc, char const *argv[])
         connect(sockfd[i], (struct sockaddr *)&servaddr, sizeof(servaddr));
     }
     
-    str_cli_SIGPIPE(stdin, sockfd[0]);
+    str_cli_slct(stdin, sockfd[0]);
 
     return 0;
 }

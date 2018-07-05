@@ -6,7 +6,9 @@
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
+#include <sys/select.h>
 #include <sys/socket.h>
+#include <sys/time.h>
 #include <sys/wait.h>
 // #include <readline/readline.h>
 
@@ -16,5 +18,6 @@
 void str_echo(int);
 void str_cli(FILE *fp, int sockfd);
 void str_cli_SIGPIPE(FILE *fp, int sockfd);
+void str_cli_slct(FILE *fp, int sockfd)
 ssize_t readline(int fd, void *vptr, size_t maxlen);
 void sig_chld(int signo);
