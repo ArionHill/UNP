@@ -8,7 +8,7 @@ int main(int argc, char const *argv[])
     }
     int i, sockfd[5];
     struct sockaddr_in servaddr;
-    for (i = 0; i < 1; ++ i){
+    for (i = 0; i < 10; ++ i){
         sockfd[i] = socket(AF_INET, SOCK_STREAM, 0);
         servaddr.sin_family = AF_INET;
         servaddr.sin_port = htons(SERV_PORT);

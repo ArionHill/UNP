@@ -19,13 +19,15 @@ int main(int argc, char const *argv[])
     signal(SIGCHLD, sig_chld); // 处理僵死进程
     while (1){
         cli_len = sizeof(cliaddr);
+        sleep(20);
+        printf("will accept\n");
         connfd = accept(listenfd, (struct sockaddr *)& cliaddr, &cli_len);
-        
-        if ((child_pid = fork()) == 0){
-            close(listenfd);
-            str_echo(connfd);
-            exit(0);
-        }
+        printf("accept\n");
+        // if ((child_pid = fork()) == 0){
+        //     close(listenfd);
+        //     str_echo(connfd);
+        //     exit(0);
+        // }
         close(connfd);
     }
     return 0;
