@@ -16,6 +16,7 @@ int main(int argc, char const *argv[])
 
     sockfd = socket(AF_INET, SOCK_DGRAM, 0);
 
-    dg_cli(stdin, sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
+    // dg_cli(stdin, sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
+    dg_cli_addr(stdin, sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
     return 0;
 }
