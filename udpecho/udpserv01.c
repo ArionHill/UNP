@@ -13,6 +13,7 @@ int main(int argc, char const *argv[])
 
     bind(sockfd, (struct sockaddr *)&servaddr, sizeof(servaddr));
 
-    dg_echo(sockfd, (struct sockaddr *)&cliaddr, sizeof(cliaddr));
+    // dg_echo(sockfd, (struct sockaddr *)&cliaddr, sizeof(cliaddr));
+    dg_echo_cnt(sockfd, (struct sockaddr *)&cliaddr, sizeof(cliaddr));
     return 0;
 }
