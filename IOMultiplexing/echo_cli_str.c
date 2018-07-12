@@ -38,7 +38,7 @@ void str_cli_slct(FILE *fp, int sockfd){
                 return;
             }
             write(sockfd, sendline, strlen(sendline));
-            sleep(2);
+            // sleep(2);
         }
     }
 
